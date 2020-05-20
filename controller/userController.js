@@ -1,6 +1,7 @@
 const userModel = require('../models/user')
 
-const usersController = {
+class UsersController {
+
     userHome(req, res) {
         userModel.getUser((err, data) => {
             try {
@@ -19,7 +20,8 @@ const usersController = {
                 console.log(error)
             }
         })
-    },
+    }
+
     addUsers(req, res) {
         try {
             console.log('adduser', req.body)
@@ -45,4 +47,4 @@ const usersController = {
     }
 }
 
-module.exports = usersController
+module.exports = new UsersController()

@@ -3,7 +3,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
 const bodyParser = require('body-parser')
-const userRoutes = require('./routes/users');
+const userRoutes = require('./routes/users')
+const carRoutes = require('./routes/cars')
 
 // connecting to database
 mongoose.connect('mongodb://localhost/demoDB', {
@@ -27,7 +28,7 @@ app.use(bodyParser.urlencoded({
 // the request having /user/ will be send to userRoutes module
 // in that the request will be directed to the specific route
 app.use('/user/', userRoutes)
-
+app.use('/car/', carRoutes)
 // setting the port for the server
 const port = process.env.port || 3000;
 
