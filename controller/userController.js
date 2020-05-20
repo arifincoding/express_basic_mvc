@@ -1,3 +1,4 @@
+'use strict'
 const userModel = require('../models/user')
 
 class UsersController {
@@ -25,7 +26,7 @@ class UsersController {
     addUsers(req, res) {
         try {
             console.log('adduser', req.body)
-            const user = {
+            let user = {
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
                 city: req.body.city,

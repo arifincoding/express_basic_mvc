@@ -1,3 +1,4 @@
+'use strict'
 const carCollection = require('../database/cars')
 
 class Car {

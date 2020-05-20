@@ -1,5 +1,6 @@
-var express = require('express');
-var userControler = require('../controller/userController')
+'use strict'
+const express = require('express');
+const userControler = require('../controller/userController')
 const carController = require('../controller/carController')
 // express router is a class to create route handlers
 // router will contain the router instance

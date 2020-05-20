@@ -1,4 +1,5 @@
-userModel = require('../database/user.js')
+'use strict'
+const userModel = require('../database/user.js')
 class User {
     // this function will find all the user
     // there will be just a callback paramater
@@ -16,7 +17,7 @@ class User {
     // this will take 2 parameter.newUser is object ad cb is a callback
 
     addUser(newUser, cb) {
-        const user = new userModel({
+        let user = new userModel({
             firstname: newUser.firstname,
             lastname: newUser.lastname,
             city: newUser.city,

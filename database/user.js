@@ -1,3 +1,4 @@
+'use strict'
 const mongoose = require('mongoose')
 
 // specify the field which we want in our collection
