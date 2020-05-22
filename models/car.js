@@ -1,19 +1,29 @@
 'use strict'
 const carCollection = require('../database/cars')
+const model = require('../vendor/model')
+class Car extends model {
+    constructor() {
+        super(carCollection)
+    }
 
-class Car {
     getCar(callback) {
-        carCollection.find((err, response) => {
-            callback(null, response)
-        })
+        this.findAll(callback)
     }
 
     addCar(newCar, callback) {
-        let car = new carCollection({
-            merk: newCar.merk,
-            harga: newCar.harga
-        })
-        car.save(callback)
+        this.add(newCar, callback)
+    }
+
+    editCar(id, callback) {
+        this.findById(id, callback)
+    }
+
+    updateCar(id, carData, callback) {
+        this.updateById(id, carData, callback);
+    }
+
+    removeCar(id, callback) {
+        this.deleteById(id, callback)
     }
 }
 

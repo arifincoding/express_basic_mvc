@@ -18,6 +18,30 @@ class carController {
             res.redirect('/car/home')
         })
     }
+
+    editCar(req, res) {
+        carModel.editCar(req.params.id, (response) => {
+            res.render('carEdit', {
+                data: response
+            })
+        })
+    }
+
+    updateCar(req, res) {
+        let carData = {
+            merk: req.body.merk,
+            harga: req.body.harga
+        }
+        carModel.updateCar(req.body.id, carData, (response) => {
+            res.redirect('/car/home')
+        })
+    }
+
+    removeCar(req, res) {
+        carModel.removeCar(req.params.id, (response) => {
+            res.redirect('/car/home')
+        })
+    }
 }
 
 module.exports = new carController()

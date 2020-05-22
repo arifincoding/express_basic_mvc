@@ -12,6 +12,9 @@ router.post('/user/add', userControler.addUsers)
 
 router.get('/car/home', carController.carHome)
 router.post('/car/add', carController.addCar)
+router.get('/car/remove/:id', carController.removeCar)
+router.get('/car/update/:id', carController.editCar)
+router.post('/car/update', carController.updateCar)
 
 
 module.exports = router

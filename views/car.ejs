@@ -39,6 +39,7 @@
                 <th>
                     harga
                 </th>
+                <th>menu</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +47,8 @@
             <tr>
                 <td><%= data[i].merk%></td>
                 <td><%= data[i].harga%></td>
+                <td><a href="/car/update/<%= data[i]._id%>">update</a>|<a href="/car/remove/<%= data[i]._id%>">hapus</a>
+                </td>
             </tr>
             <% } %>
         </tbody>
