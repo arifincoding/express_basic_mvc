@@ -7,7 +7,12 @@ class Car extends model {
     }
 
     getCar(callback) {
-        this.findAll(callback)
+        this.sort({
+            _id: -1
+        })
+        this.select("merk harga")
+        this.limit(3, 0)
+        this.find(callback)
     }
 
     addCar(newCar, callback) {
